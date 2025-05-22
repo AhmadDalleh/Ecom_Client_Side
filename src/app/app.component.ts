@@ -11,22 +11,11 @@ import { IPagnation } from './shared/Models/Pagnation';
 
 
 export class AppComponent implements OnInit {
-  constructor(private http:HttpClient){}
-  baseURl ='https://localhost:44331/api/Products/get-all';
-  Product:IProduct[];
-
-
-  getProduct(){
-    return this.http.get(this.baseURl).subscribe({
-      next:((value:IPagnation)=>{
-        this.Product = value.data;
-        console.log(value.data);
-      }),
-    });
-  }
+  constructor(){}
+ 
 
   ngOnInit(): void {
-    this.getProduct();
+   
   } 
   
   title = 'client';
